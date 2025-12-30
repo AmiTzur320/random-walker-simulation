@@ -1,0 +1,46 @@
+RUNNING (on linux)
+
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python main.py
+
+MAIN FEATURES
+
+
+- The walk parameters are controlled through the UI.
+
+- The program also supports 3d (only in interactive-mode).
+- The program supports two main modes: interactive, and non-interactive (controlled by the "interactive?" checkbox).
+  - In interactive-mode, the walk is visualized on the screen (with matplotlib).
+  - In non-interactive-mode, the program runs several experiments with different num-of-steps,
+    and outputs the experiment-results into files.
+    - charts are outputted into "png" files and a "stats.csv" file:
+      avg_distance_from_origin.png
+      avg_distance_from_x_axis.png
+      avg_distance_from_y_axis.png
+      avg_num_steps_to_exit_circle.png
+      avg_total_walker_crosse_y_axis.png
+
+- The walker-types are as follows:
+  - walker1: moves 1 unit in a random direction (out of 360).
+  - walker2: moves randomly between [0.5,1.5] units in a random direction (out of 360).
+  - walker3: moves 1 unit in a random direction out of 4 (Up,Down,Right,left).
+  - walker4: biased walk - moves 1 unit in a random direction out of 360, but is biased towards the origin.
+  - walker5: same as walker1, but makes bigger steps.
+  - walker6: same as walker1, but has a 50% change to 'take a rest'.
+
+- The program supports few types of elements (supports 2d and 3d):
+  - obstacles: a list of points that the walker cannot cross.
+  - portals: a list of points that if the walker crossed them ,the walker teleports to other point in universe.
+  -black holes (only in 3d):  if the walker crosse the 'horizon event' it will be sucked into the blackhole and will never return.
+  the horizon event was created with physics formulas of gravitational force, taking notice of the mass of a walker and
+  the mass of the black hole. the formula used was F = G * (m1 * m2) / r^2
+  where F is the force, G is the gravitational constant, m1 is the mass of the walker, m2 is the mass of the black hole
+  and r is the distance between the walker and the black hole.
+  traps- if the walker crosse the trap, he cannot walk out of it.
+  slow zones- if the walker crosse the slow zone, he will move slower.
+
+  The program supports also:
+  -restart option (check box): if checked, there will be a probability that the walker will teleport to the origin and keep walking from there.
+  - ice option (check box): if checked, there will  be a probability that the frame will pause in slower pace, so we can analyze the walk better.
