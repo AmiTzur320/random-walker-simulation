@@ -89,6 +89,11 @@ Where:
 
 ---
 
-## License
+## 📜 License & Academic Integrity
 
-[Specify your license here — MIT is common for open-source projects]
+### License
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+### Academic Note
+This project was developed as part of the **"Introduction to Computer Science" (67101)** course at the **Hebrew University of Jerusalem**. 
+It is shared here for **portfolio purposes only**. If you are a current student, please adhere to the university's academic integrity guidelines and do not copy this code for your assignments.
