@@ -1,99 +1,83 @@
 # Random Walker Simulator
 
-A configurable random-walk simulator with an interactive UI for exploring walker behaviors in 2D and 3D environments. Run interactively to visualize paths in real time, or use batch mode for controlled experiments with automated data export.
+A configurable random-walk simulator with an interactive UI for exploring walker behavior in **2D and 3D** environments.  
+Run interactively to visualize paths in real time, or use **batch mode** for controlled experiments with automated exports (CSV + charts).
 
-## Features
+## ✨ Features
 
 ### Execution Modes
-- **Interactive Mode**: Real-time visualization using Matplotlib (supports 2D and 3D)
-- **Batch Mode**: Automated experiments with CSV statistics and PNG charts
+- **Interactive mode:** real-time visualization using Matplotlib (2D + 3D)
+- **Batch mode:** automated experiments with CSV statistics and PNG charts
 
 ### Walker Strategies
-- **walker1**: Unit step with uniform random direction (0–360°)
-- **walker2**: Variable step size (0.5–1.5 units) with random direction
-- **walker3**: Discrete 4-direction grid walk (Up/Down/Left/Right)
-- **walker4**: Biased walk with tendency toward origin
-- **walker5**: Extended step size variant
-- **walker6**: 50% rest probability per step
+- **Uniform step:** unit step with random direction (0–360°)
+- **Variable step:** step size in [0.5, 1.5] with random direction
+- **Grid walk:** discrete 4-direction walk (Up/Down/Left/Right)
+- **Biased-to-origin:** tendency toward the origin
+- **Extended step:** longer step-size variant
+- **Resting walker:** 50% probability to rest each step
 
 ### Environment Elements
-- **Obstacles**: Impassable boundary points
-- **Portals**: Teleportation between universe locations
-- **Traps**: One-way zones that capture walkers
-- **Slow Zones**: Movement speed reduction areas
-- **Black Holes** (3D only): Gravitational capture using event horizon physics
+- **Obstacles:** impassable boundary points  
+- **Portals:** teleportation between locations  
+- **Traps:** one-way capture zones  
+- **Slow zones:** movement speed reduction areas  
+- **Black holes (3D only):** gravitational capture within an event horizon  
 
 ### Optional Behaviors
-- **Restart-to-origin**: Probabilistic teleportation back to start
-- **Ice mode**: Frame-by-frame progression for detailed analysis
+- **Restart-to-origin:** probabilistic teleportation back to start
+- **Ice mode:** frame-by-frame progression for detailed analysis
 
 ---
 
-## Installation
+## 🛠️ Installation
+
 ```bash
-python3 -m venv venv
+python -m venv venv
+# macOS/Linux:
 source venv/bin/activate
+# Windows:
+# venv\Scripts\activate
+
 pip install -r requirements.txt
 ```
 
-## Usage
+## ▶️ Usage
 ```bash
 python main.py
 ```
+The UI allows parameter adjustment without code modifications.
+For reproducible results, set a fixed random seed in the configuration.
 
-The UI allows parameter adjustment without code modifications. For reproducible results, set a fixed random seed in the configuration.
+## 📦 Batch Mode Output
 
----
-
-## Batch Mode Output
-
-When running in batch mode, the simulator generates:
+When running in batch mode, the simulator generates files under statistics/:
 
 ### Statistics
-- `stats.csv` — Aggregated metrics across experiments
+
+* stats.csv — aggregated metrics across experiments
 
 ### Visualizations
-- `avg_distance_from_origin.png`
-- `avg_distance_from_x_axis.png`
-- `avg_distance_from_y_axis.png`
-- `avg_num_steps_to_exit_circle.png`
-- `avg_total_walker_crosses_y_axis.png`
 
----
+* avg_distance_from_origin.png
+* avg_distance_from_x_axis.png
+* avg_distance_from_y_axis.png
+* avg_num_steps_to_exit_circle.png
+* avg_total_walker_crosses_y_axis.png
 
-## Physics Model
-
-Black hole gravitational force calculation:
-```
-F = G × (m₁ × m₂) / r²
-```
-
-Where:
-- `F` = gravitational force
-- `G` = gravitational constant
-- `m₁` = walker mass
-- `m₂` = black hole mass
-- `r` = distance between walker and black hole
-
----
-
-## Project Structure
-```
+## 🗂️ Project Structure
+```txt
 .
-├── main.py
-├── requirements.txt
+├── statistics       # outputs
 ├── README.md
 ├── src/
-└── outputs/            # Generated files (git-ignored)
+└── VIDEO            # YouTube video of me represting the project
 ```
-
----
-
 ## 📜 License & Academic Integrity
+License
 
-### License
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+MIT License — see LICENSE.
 
 ### Academic Note
-This project was developed as part of the **"Introduction to Computer Science" (67101)** course at the **Hebrew University of Jerusalem**. 
-It is shared here for **portfolio purposes only**. If you are a current student, please adhere to the university's academic integrity guidelines and do not copy this code for your assignments.
+Developed as part of HUJI "Introduction to Computer Science" (67101).
+Shared for portfolio purposes only — please follow the university’s academic integrity rules.
