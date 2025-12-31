@@ -1,4 +1,3 @@
-import random
 import helper
 from typing import Union
 

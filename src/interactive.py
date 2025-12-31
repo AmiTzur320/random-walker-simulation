@@ -6,7 +6,6 @@ import helper
 from portal import Portal
 from obstacle import Obstacle
 from slowZone import SlowZone
-from matplotlib.lines import Line2D
 from trap import Trap
 
 

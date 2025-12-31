@@ -2,7 +2,6 @@ import math
 import random
 from typing import Union
 
-import matplotlib.pyplot as plt
 import numpy as np
 import helper
 

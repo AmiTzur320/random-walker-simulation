@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 import helper
 from portal3d import Portal3d
 from obstacle3d import Obstacle3d
-from walker3d import Walker3d
 from traps3d import Traps3d
 from slowzone3d import SlowZone3d
 from blackhole3d import BlackHole3d

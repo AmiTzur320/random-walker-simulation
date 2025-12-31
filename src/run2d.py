@@ -182,7 +182,7 @@ def stats_to_csv(stats: dict[str, dict[int, float]]) -> None:
         stats (dict[str, dict[int, float]]): The statistics.
     """
 
-    with open('stats.csv', 'w', newline='') as csvfile:
+    with open('../statistics/stats.csv', 'w', newline='') as csvfile:
         fieldnames = ['num_steps', 'avg_distance_from_origin', 'avg_distance_from_x_axis', 'avg_distance_from_y_axis',
                       'avg_num_steps_to_exit_circle', 'avg_total_walker_crosse_y_axis']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

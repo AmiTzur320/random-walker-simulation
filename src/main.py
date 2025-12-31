@@ -1,13 +1,8 @@
-import argparse
-import ast
 import subprocess
 import tempfile
 import tkinter as tk
-from tkinter import ttk, messagebox
-import json
 import json
 import sys
-from interactive import Interactive
 import run3d
 
 NUM_STEPS_FOR_STATISTICS = [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950,
